@@ -1,0 +1,121 @@
+                                       GIT COMMANDS--->
+
+                     #TWO ways to bring files/project in git:
+                        1.local files in git:
+                                  =>first change the directory(till project folder) using cd.
+                                  =>then use command git init.
+
+
+                        2.Project/files from github:
+                                      we bring the copy of that project here i.e. cloning.
+                                  =>copy url of project from green code button in github.
+                                  =>then use command: git clone URL(paste url).
+
+
+#commands on this projects:
+
+1.dir:             to see all files in that directory.
+2.git status:      to check the status of project such as what changes are made,commit or not etc.
+
+3. when you made some changes in index.html file and then check status:
+     it will show  you modified index.html in red: means changes not staged for commit (unstaged area) and you can't commit right now.
+      if you use git commit command,it will show changes not staged.then follow step 5.
+          
+4.git diff index.html : it will show you all changes you made on index.html.
+5.git add index.html  : to change the status from unstaged to staged.
+                         now if use git status: it will show you modified index.html in green,means changes staged  for commit.
+                         now you commit the changes.
+
+6.git commit -m "INDEX file changed" : to commit the change.
+                                       It means you say the author that you made some changes.
+
+7.git log : to see all commits made by you and others. 
+   or git log -5 : to see only last 5 commits.
+  * use Q BUTTON to come back to new cammand line.
+
+8.git show commit id( 7279ecb7fe82b399e21f5b580be7ecf818dc55ea): to see changes made by this commit.
+
+9.git branch : to see all the branches and the current branch on which you are.
+10.git checkout -b BRANCH_NAME(new): too made a new branch from that branch and switch to new branch.
+11.git checkout branch_name(master/main/any) : for shifting to a new branch.
+12.git branch -d branch_name(new/or any): for deleting a particular branch.
+13.git branch new_branch_name(new/or any) : to made a new branch but doesn't shift to it.
+             =>now shift to new branch using git checkout command.
+             =>made changes to index file.
+             =>check status.
+             =>commit that changes as done earlier.
+             =>now git log,and see head points to new and master/main branch is different.
+             =>so merge them. but first shift to main/master branch otherwise not possible.
+14.git merge branch_name(eg new) : to merge branch in main branch.
+                                   then see git log status,you see both merge and head points to master.both comes to recent commit.
+
+15.git reset hard HEAD~1 :  delete a recent commit made, also changes are delete and new branch shift to first commit(git log).
+                            for deletion first come to new branch,don't play with master/main branch.
+
+16.git reset soft commit_id(of previous commit of anyone,others also) : delete a recent commit but changes remains as it is.
+                                                                        new branch shift to prevoius commit.(git log).
+                   =>also see git status,it shows modified index.html i.e. changes not deleted.
+
+17.git restore --staged index.html : to undo staging done(git log add)(modified in green to red again).
+18.git restore index.html : to undo the changes made in index.html file.(from modified in red to not nothing to commit i.e. no change)
+
+
+19.git pull : to pull remote commits to local computer for synchronization.
+20.git push : to push your local commits to the remote server commits.
+
+
+21.git commit --amend : to made changes in the file(eg.index.html) without new commit(changes on existing commit).
+                        =>first made changes.
+                        =>git status -> git add.
+                        =>for commit,don't add new commit,change a existing commit using this command.
+                NOW a new window opens:
+                    and you have to save it: by pressing=> esc:qw + enter.
+                YOU come to your command window.
+
+
+22.PULL REQUEST==>   it means  request the author of the project to evaluate your changes and merge his and your contribution.
+                         1. select the repo which you want to contribute and fork it to your account.
+                         2. now clone this project with your system using git.
+                         3. Make changes as you want and commit it.
+                         4. Now push the file from your local system to your remote account using git push.
+                         5. click on PULL REQUEST.
+
+
+
+
+
+
+                                       push your local project to github using git-->
+
+1. git config --global user.name "shubham jamliya"
+2. git config --global user.email "shubhamjamliya116@gmail.com"
+3. touch .gitignore    :   it creates a text file .gitignore 
+                           This file used to prevent some files(which u dont want to upload) from uploading to github.
+                            Just write the file name and put '/' after it and then save it and exit.
+
+4.git init :                                it takes our files to git.(.git hideen file created)
+5.git add .(dot) :                          put all content to staging area.
+6.git commit -m "intial commit"  :          all files commited.
+7.git status                      :          to see the status of our branch (it shows nothing to commit).
+8.git remote add origin "SSH link paste" :  link you to github repository.
+9.git push origin master                 :  push files to github.
+                                            1. if it shows access denied :
+                                               Then create your ssh key first:
+                                                   a.ssh-keygen -r rsa -c "your email" or  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+                                                   b.Now copy key location and apply command: cat location.
+                                                   c.copy the ssh key and paste it in the github ket section and click on add new kry.
+                                                   
+                                        now again use command: git push origin master
+                                        FILE transfered successfully.
+
+                                       2.if not gives an error  ==> file got uploaded.
+
+     
+
+
+
+
+
+       
+ 
+    
